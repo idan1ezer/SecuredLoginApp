@@ -17,7 +17,6 @@ import android.view.View;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
-import android.widget.Button;
 import android.widget.CheckBox;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (checkUsername() && checkPassword()) {
                     if (isConnected() && tookPhoto && approvedVolume() && isAirplaneModeOn()) {
-                        movePage();
+                        goToHomeActivity();
                     }
                 }
             }
@@ -88,20 +87,18 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private void movePage() {
-//        Intent i = new Intent(getApplicationContext(), DestinationActivity.class);
-//        i.putExtra("BitmapImage", this.imageBitmap);
-//        startActivity(i);
+    private void goToHomeActivity() {
+        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+        i.putExtra("BitmapImage", this.imageBitmap);
+        startActivity(i);
     }
 
     private boolean checkPassword() {
-//        return Validator.PatternPassword(this.password.getEditText().getText().toString());
-        return true;
+        return Validation.PasswordValidation(this.password.getEditText().getText().toString());
     }
 
     private boolean checkUsername() {
-//        return Validator.PatternUsername(this.username.getEditText().getText().toString());
-        return true;
+        return Validation.UsernameValidation(this.username.getEditText().getText().toString());
     }
 
     private void findViews() {
