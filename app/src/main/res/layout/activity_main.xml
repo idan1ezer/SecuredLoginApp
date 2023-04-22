@@ -24,6 +24,7 @@
             android:textAlignment="center"
             app:fontFamily="sans-serif-medium"
             android:text="Log in"
+            android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"/>
 
@@ -44,7 +45,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="16sp"
-                android:hint="Email"/>
+                android:hint="Username"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
